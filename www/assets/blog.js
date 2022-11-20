@@ -7,13 +7,18 @@ topbar.config({
 })
 
 function LoaderExtension(naja) {
-    naja.addEventListener('start', () => topbar.show());
-    naja.addEventListener('complete', () => topbar.hide());
+    naja.addEventListener('start', function () {
+        topbar.show()
+    });
+
+    naja.addEventListener('complete', function () {
+        topbar.hide()
+    });
 
     return this;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     naja.registerExtension(LoaderExtension)
     naja.initialize()
 });
