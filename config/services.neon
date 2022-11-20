@@ -1,0 +1,11 @@
+services:
+	- App\Router\RouterFactory::createRouter
+	- App\Model\Security\Passwords
+	- App\Model\User\Auth\UserAuthenticator
+
+search:
+    model:
+        in: %appDir%/Model
+        classes:
+            - *Repository
+            - *Factory

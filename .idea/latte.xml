@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LattePluginSettings">
+    <option name="variableSettings">
+      <list>
+        <LatteVariableSettings VarName="user" VarType="Nette\Security\User" />
+      </list>
+    </option>
+    <customMacroSettings>
+      <list>
+        <LatteTagSettings DeprecatedMessage="" MacroName="block" MacroType="PAIR">
+          <option name="vendor" value="OTHER" />
+        </LatteTagSettings>
+        <LatteTagSettings DeprecatedMessage="" MacroName="href" MacroType="ATTR_ONLY">
+          <option name="vendor" value="OTHER" />
+        </LatteTagSettings>
+        <LatteTagSettings DeprecatedMessage="" MacroName="class" MacroType="ATTR_ONLY">
+          <option name="vendor" value="OTHER" />
+        </LatteTagSettings>
+      </list>
+    </customMacroSettings>
+  </component>
+</project>

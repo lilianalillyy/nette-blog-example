@@ -1,0 +1,4 @@
+database:
+	dsn: 'mysql:host=database;dbname=nubium_task'
+	user: root
+	password: nubium

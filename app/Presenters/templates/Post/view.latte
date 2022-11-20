@@ -1,0 +1,31 @@
+{varType App\Model\Post\Post $post}
+
+{varType int $likes}
+
+{varType int $dislikes}
+
+{block content}
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 n:block="title" class="display-4 font-italic">{$post->getTitle()}</h1>
+            <p class="lead my-3">{$post->getPerex()}</p>
+            <p class="lead mb-0" n:snippet="rating">
+                {if $user->isLoggedIn()}
+                    <a n:href="like!" class="ajax text-white btn btn-sm btn-outline-success">+{$likes}</a>
+                    <a n:href="dislike!" class="ajax text-white btn btn-sm btn-outline-danger"">-{$dislikes}</a>
+                {else}
+                    <span class="text-white btn btn-sm btn-success">+{$likes}</span>
+                    <span class="text-white btn btn-sm btn-danger"">-{$dislikes}</span>
+                {/if}
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 blog-main">
+            <div class="blog-post">
+                <p>{$post->getContent()}</p>
+            </div>
+        </div>
+    </div>
+{/block}

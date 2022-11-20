@@ -1,0 +1,35 @@
+{varType App\Model\Post\Post $latestPost}
+
+{varType App\Model\Post\Post[] $posts}
+
+{block content}
+    {if count($posts) >= 1}
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 font-italic">{$latestPost->getTitle()}</h1>
+                <p class="lead my-3">{$latestPost->getPerex()}</p>
+                <p class="lead mb-0"><a n:href="Post:view $latestPost->getId()" class="ajax text-white font-weight-bold">Číst dále...</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 blog-main">
+                {foreach $posts as $post}
+                    <div class="blog-post">
+                        <h2 class="blog-post-title">
+                            <a n:href="Post:view $post->getId()" class="ajax">{$post->getTitle()}</a>
+                        </h2>
+                        <p class="blog-post-meta">{$post->getCreatedAt()->format("d.m.Y H:i")}</a></p>
+
+                        <p>{$post->getPerex()}</p>
+                        <hr>
+                        <p>{$post->getContent()|truncate:256}</p>
+
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+    {else}
+        <p>Zatím nebyly přidány žádné příspěvky</p>
+    {/if}
+{/block}
