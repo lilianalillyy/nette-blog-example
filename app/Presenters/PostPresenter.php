@@ -14,6 +14,7 @@ class PostPresenter extends BasePresenter
         private readonly RatingRepository $ratingRepository
     )
     {
+        parent::__construct();
     }
 
     public function renderView(int $id) {

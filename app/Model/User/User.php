@@ -3,7 +3,6 @@
 namespace App\Model\User;
 
 use DateTime;
-use RuntimeException;
 
 class User
 {

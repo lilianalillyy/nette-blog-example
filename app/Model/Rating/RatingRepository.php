@@ -2,13 +2,14 @@
 
 namespace App\Model\Rating;
 
+use App\Exception\EntityNotFoundException;
+use App\Exception\InvalidArgumentException;
 use App\Model\Post\PostRepository;
 use App\Model\User\UserRepository;
 use DateTime;
 use Nette\Database\Explorer;
 use Nette\Database\Table\ActiveRow;
 use Nette\Database\Table\Selection;
-use RuntimeException;
 
 class RatingRepository
 {
@@ -102,19 +103,19 @@ class RatingRepository
     public function ratePost(int $postId, int $userId, string $kind): ?Rating
     {
         if (!in_array($kind, [Rating::KIND_LIKE, Rating::KIND_DISLIKE])) {
-            throw new RuntimeException("Neplatné hodnocení.");
+            throw new InvalidArgumentException("Neplatné hodnocení.");
         }
 
         $post = $this->postRepository->findById($postId);
 
         if (!$post) {
-            throw new RuntimeException("Příspěvek nenalezen.");
+            throw new EntityNotFoundException("Příspěvek nenalezen.");
         }
 
         $user = $this->userRepository->findById($userId);
 
         if (!$user) {
-            throw new RuntimeException("Uživatel nenalezen.");
+            throw new EntityNotFoundException("Uživatel nenalezen.");
         }
 
         $rating = $this->getDatabase()->where([
