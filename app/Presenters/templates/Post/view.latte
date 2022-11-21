@@ -10,13 +10,8 @@
             <h1 n:block="title" class="display-4 font-italic">{$post->getTitle()}</h1>
             <p class="lead my-3">{$post->getPerex()}</p>
             <p class="lead mb-0" n:snippet="rating">
-                {if $user->isLoggedIn()}
-                    <a n:href="like!" class="ajax text-white btn btn-sm btn-outline-success">+{$likes}</a>
-                    <a n:href="dislike!" class="ajax text-white btn btn-sm btn-outline-danger"">-{$dislikes}</a>
-                {else}
-                    <span class="text-white btn btn-sm btn-success">+{$likes}</span>
-                    <span class="text-white btn btn-sm btn-danger"">-{$dislikes}</span>
-                {/if}
+              <a n:href="like!" class="ajax text-white btn btn-sm btn-success">+{$likes}</a>
+              <a n:href="dislike!" class="ajax text-white btn btn-sm btn-danger"">-{$dislikes}</a>
             </p>
         </div>
     </div>

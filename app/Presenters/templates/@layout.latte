@@ -14,24 +14,24 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900" rel="stylesheet">
 </head>
 <body>
+<div class="body">
+  <div class="container">
+    <header class="blog-header py-3 border-bottom">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-2 text-left">
+          <a class="blog-header-logo text-dark ajax" n:href="Homepage:default">Test Blog</a>
+        </div>
+        <div class="col-2 d-flex justify-content-end align-items-center">
 
-<div class="container">
-  <header class="blog-header py-3 my-3 border-bottom">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-2 text-left">
-        <a class="blog-header-logo text-dark ajax" n:href="Homepage:default">Test Blog</a>
-      </div>
-      <div class="col-2 d-flex justify-content-end align-items-center">
 
-
-        {if $user->isLoggedIn()}
-          <div class=dropdown">
-            <button
-                    type="button"
-                    class="btn btn-sm btn-secondary dropdown-toggle btn-labeled"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-            >
+          {if $user->isLoggedIn()}
+            <div class=dropdown">
+              <button
+                      type="button"
+                      class="btn btn-sm btn-secondary dropdown-toggle btn-labeled"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+              >
                             <span class="btn-label">
                                 <svg
                                         width="18px"
@@ -50,39 +50,40 @@
                                             $></path>
                                 </svg>
                             </span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <p class="dropdown-header">Přihlášen/a jako <b>{$user->identity->username}</b></p>
-              <a class="dropdown-item ajax"  n:href="User:default">Můj účet</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" n:href="Auth:logout">Odhlásit se</a>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <p class="dropdown-header">Přihlášen/a jako <b>{$user->identity->username}</b></p>
+                <a class="dropdown-item ajax" n:href="User:default">Můj účet</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" n:href="Auth:logout">Odhlásit se</a>
+              </div>
             </div>
-          </div>
 
-        {else}
-          <a class="btn btn-sm btn-light mr-2" n:href="Auth:login">Přihlášení</a>
+          {else}
+            <a class="btn btn-sm btn-light mr-2" n:href="Auth:login">Přihlášení</a>
 
-          <a class="btn btn-sm btn-outline-secondary" n:href="Auth:register">Registrace</a>
-        {/if}
+            <a class="btn btn-sm btn-outline-secondary" n:href="Auth:register">Registrace</a>
+          {/if}
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
+
+  <main role="main" class="container" n:snippet="content">
+    <div n:foreach="$flashes as $flash" class="alert alert-{$flash->type} mb-3">{$flash->message}</div>
+
+    {include content}
+  </main>
+
+  <footer class="blog-footer">
+    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+              href="https://twitter.com/mdo">@mdo</a>.
+    </p>
+    <p>
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
 </div>
-
-<main role="main" class="container" n:snippet="content">
-  <div n:foreach="$flashes as $flash" class="alert alert-{$flash->type} mb-3">{$flash->message}</div>
-
-  {include content}
-</main>
-
-<footer class="blog-footer">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-            href="https://twitter.com/mdo">@mdo</a>.
-  </p>
-  <p>
-    <a href="#">Back to top</a>
-  </p>
-</footer>
 </body>
 
 {block scripts}

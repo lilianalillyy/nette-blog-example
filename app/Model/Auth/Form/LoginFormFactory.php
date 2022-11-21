@@ -13,6 +13,8 @@ class LoginFormFactory
     {
         $form = new BootstrapForm();
 
+        $form->setAjax();
+
         $form->renderMode = RenderMode::SIDE_BY_SIDE_MODE;
 
         $form->addText('username', 'Uživatelské jméno')

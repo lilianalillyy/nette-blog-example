@@ -100,6 +100,13 @@ class RatingRepository
 
     }
 
+    public function countRatings(int $postId, ?string $kind = Rating::KIND_LIKE)
+    {
+        return $this->getDatabase()->where(array_merge([
+            Rating::POST_ID_FIELD => $postId
+        ], $kind ? [Rating::KIND_FIELD => $kind] : null))->count();
+    }
+
     public function ratePost(int $postId, int $userId, string $kind): ?Rating
     {
         if (!in_array($kind, [Rating::KIND_LIKE, Rating::KIND_DISLIKE])) {

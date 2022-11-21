@@ -11,11 +11,11 @@ class Kernel
 		$configurator = new ExtraConfigurator();
 		$appDir = dirname(__DIR__);
 
-		$configurator->enableTracy($appDir . '/log');
-
         $configurator->setEnvDebugMode();
 
-		$configurator->setTimeZone('Europe/Prague');
+        $configurator->enableTracy($appDir . '/log');
+
+        $configurator->setTimeZone('Europe/Prague');
 		$configurator->setTempDirectory($appDir . '/temp');
 
 		$configurator->createRobotLoader()

@@ -12,3 +12,6 @@ di:
 	export:
 		parameters: no
 		tags: no
+
+tracy:
+    dumpTheme: dark

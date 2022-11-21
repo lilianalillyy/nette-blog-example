@@ -13,6 +13,8 @@ class PasswordFormFactory
     {
         $form = new BootstrapForm();
 
+        $form->setAjax();
+
         $form->renderMode = RenderMode::SIDE_BY_SIDE_MODE;
 
         $form->addPassword('oldPassword', 'Staré heslo')->setRequired();

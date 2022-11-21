@@ -24,9 +24,6 @@ services:
       - ./:/var/www/html/
     depends_on:
       - database
-    environment:
-      NETTE_DEBUG: 1
-      STARTUP_COMMAND_1: composer install
   database:
     image: mysql:8.0
     command: mysqld --sql_mode="STRICT_ALL_TABLES"

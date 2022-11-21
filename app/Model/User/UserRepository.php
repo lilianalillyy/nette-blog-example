@@ -57,10 +57,10 @@ class UserRepository
      * Find multiple users.
      *
      * @param array $conditions
-     * @param string $order
+     * @param string|null $order
      * @return array
      */
-    public function findMany(array $conditions = [], string $order = ""): array
+    public function findMany(array $conditions = [], ?string $order = null): array
     {
         $query = $this->getDatabase()->where($conditions);
 
