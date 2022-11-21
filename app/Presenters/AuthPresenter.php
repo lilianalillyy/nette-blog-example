@@ -63,6 +63,7 @@ class AuthPresenter extends BasePresenter
         $form = $this->registerFormFactory->create();
 
         $form->onSubmit[] = function (Form $form) {
+            /** @var array<string, mixed> $values */
             $values = $form->getValues('array');
 
             if ($values["password"] !== $values["repeatPassword"]) {

@@ -34,6 +34,12 @@ class Post
         return $this->getTitle();
     }
 
+    /**
+     * Create an instance from an array.
+     *
+     * @param array<string, mixed> $data
+     * @return Post
+     */
     public static function fill(array $data): Post
     {
         return new Post(
@@ -45,6 +51,11 @@ class Post
         );
     }
 
+    /**
+     * Transform an instance into an array.
+     *
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         return [

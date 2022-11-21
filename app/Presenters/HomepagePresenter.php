@@ -19,7 +19,7 @@ final class HomepagePresenter extends BasePresenter
         parent::__construct();
     }
 
-    public function renderDefault(int $page = 1, string $sortBy = 'created_at')
+    public function renderDefault(int $page = 1, string $sortBy = 'created_at'): void
     {
         $orderColumn = match ($sortBy) {
             'created_at' => Post::CREATED_AT_FIELD,

@@ -44,7 +44,7 @@ class UserRepository
     /**
      * Find first user by matching conditions.
      *
-     * @param array $conditions
+     * @param array<string, mixed> $conditions
      * @return User|null
      */
     public function findOne(array $conditions = []): ?User {
@@ -56,9 +56,9 @@ class UserRepository
     /**
      * Find multiple users.
      *
-     * @param array $conditions
+     * @param array<string, mixed> $conditions
      * @param string|null $order
-     * @return array
+     * @return User[]
      */
     public function findMany(array $conditions = [], ?string $order = null): array
     {
@@ -76,11 +76,12 @@ class UserRepository
     /**
      * Create a new user.
      *
-     * @param array $data
+     * @param array<string, mixed> $data
      * @return User
      */
     public function create(array $data): User
     {
+        /** @var ActiveRow $row */
         $row = $this->getDatabase()->insert([
             User::USERNAME_FIELD => $data["username"],
             User::PASSWORD_FIELD => $this->passwords->hash($data["password"]),

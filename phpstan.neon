@@ -1,0 +1,17 @@
+parameters:
+	level: 8
+
+	excludePaths:
+		- /db/*
+		- /vendor/*
+		- /temp/*
+
+	fileExtensions:
+		- php
+
+	ignoreErrors:
+	    - '#Parameter \#1 \$page of method Nette\\Database\\Table\\Selection::page\(\) expects int<0, max>, int given.#'
+includes:
+	- vendor/phpstan/phpstan-nette/extension.neon
+	- vendor/phpstan/phpstan-nette/rules.neon
+	- vendor/phpstan/phpstan-doctrine/extension.neon

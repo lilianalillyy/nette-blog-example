@@ -27,7 +27,17 @@
       <path value="$PROJECT_DIR$/vendor/contributte/forms-bootstrap" />
       <path value="$PROJECT_DIR$/vendor/contributte/neonizer" />
       <path value="$PROJECT_DIR$/vendor/contributte/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-strict-rules" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-deprecation-rules" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-doctrine" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-nette" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/vendor/bin/phpstan" />
+    </PhpStan_settings>
+  </component>
 </project>

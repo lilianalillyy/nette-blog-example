@@ -48,7 +48,7 @@ class RatingRepository
     /**
      * Find first rating by matching conditions.
      *
-     * @param array $conditions
+     * @param array<string, mixed> $conditions
      * @return Rating|null
      */
     public function findOne(array $conditions = []): ?Rating
@@ -61,9 +61,9 @@ class RatingRepository
     /**
      * Find multiple ratings.
      *
-     * @param array $conditions
+     * @param array<string, mixed> $conditions
      * @param string|null $order
-     * @return array
+     * @return Rating[]
      */
     public function findMany(array $conditions = [], ?string $order = null): array
     {
@@ -81,13 +81,14 @@ class RatingRepository
     /**
      * Create a new rating.
      *
-     * @param array $data
+     * @param array<string, mixed> $data
      * @param int $postId
      * @param int $userId
      * @return Rating
      */
     public function create(array $data, int $postId, int $userId): Rating
     {
+        /** @var ActiveRow $row */
         $row = $this->getDatabase()->insert([
             Rating::KIND_FIELD => $data["kind"],
             Rating::POST_ID_FIELD => $postId,
@@ -100,11 +101,11 @@ class RatingRepository
 
     }
 
-    public function countRatings(int $postId, ?string $kind = Rating::KIND_LIKE)
+    public function countRatings(int $postId, ?string $kind = Rating::KIND_LIKE): int
     {
         return $this->getDatabase()->where(array_merge([
             Rating::POST_ID_FIELD => $postId
-        ], $kind ? [Rating::KIND_FIELD => $kind] : null))->count();
+        ], $kind ? [Rating::KIND_FIELD => $kind] : []))->count();
     }
 
     public function ratePost(int $postId, int $userId, string $kind): ?Rating
@@ -125,12 +126,14 @@ class RatingRepository
             throw new EntityNotFoundException("Uživatel nenalezen.");
         }
 
+        /** @var ActiveRow|null $rating */
         $rating = $this->getDatabase()->where([
             Rating::POST_ID_FIELD => $post->getId(),
             Rating::USER_ID_FIELD => $user->getId()
         ])->fetch();
 
         if (!$rating) {
+            /** @var ActiveRow $rating */
             $rating = $this->getDatabase()->insert([
                 Rating::KIND_FIELD => $kind,
                 Rating::POST_ID_FIELD => $postId,

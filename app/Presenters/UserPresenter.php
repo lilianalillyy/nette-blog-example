@@ -31,7 +31,9 @@ class UserPresenter extends BasePresenter
                 return;
             }
 
-            if (!$this->passwords->verify($values["oldPassword"], $this->getUser()->getIdentity()->password)) {
+            $oldHash = $this->getUser()->getIdentity()?->getData()['password'];
+
+            if (!$this->passwords->verify($values["oldPassword"], $oldHash)) {
                 $this->flashMessage('Staré heslo je nesprávné.', 'danger');
                 return;
             }

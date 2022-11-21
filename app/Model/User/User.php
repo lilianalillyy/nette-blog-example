@@ -34,6 +34,12 @@ class User
         return $this->getUsername();
     }
 
+    /**
+     * Create an instance from an array.
+     *
+     * @param array<string, mixed> $data
+     * @return User
+     */
     public static function fill(array $data): User
     {
         return new User(
@@ -45,6 +51,11 @@ class User
         );
     }
 
+    /**
+     * Transform an instance into an array.
+     *
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         return [
@@ -76,7 +87,7 @@ class User
      * @param string $username
      * @return User
      */
-    public function setUsername(string $username): static
+    public function setUsername(string $username): self
     {
         $this->username = $username;
         return $this;
@@ -94,7 +105,7 @@ class User
      * @param string $passwordHash
      * @return User
      */
-    public function setPasswordHash(string $passwordHash): static
+    public function setPasswordHash(string $passwordHash): self
     {
         $this->passwordHash = $passwordHash;
         return $this;
@@ -120,7 +131,7 @@ class User
      * @param DateTime $updatedAt
      * @return User
      */
-    public function setUpdatedAt(DateTime $updatedAt): static
+    public function setUpdatedAt(DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
         return $this;

@@ -2,6 +2,7 @@
 
 namespace App\Model\Rating;
 
+use App\Model\User\User;
 use DateTime;
 
 class Rating
@@ -41,6 +42,12 @@ class Rating
         return $this->getKind();
     }
 
+    /**
+     * Create an instance from an array.
+     *
+     * @param array<string, mixed> $data
+     * @return Rating
+     */
     public static function fill(array $data): Rating
     {
         return new Rating(
@@ -53,6 +60,11 @@ class Rating
         );
     }
 
+    /**
+     * Transform an instance into an array.
+     *
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         return [

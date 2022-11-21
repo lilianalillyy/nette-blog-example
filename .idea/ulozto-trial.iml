@@ -30,6 +30,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/contributte/forms-bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/contributte/neonizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/contributte/bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan-strict-rules" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan-deprecation-rules" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan-doctrine" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan-nette" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

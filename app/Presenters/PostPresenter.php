@@ -27,7 +27,7 @@ class PostPresenter extends BasePresenter
         parent::startup();
     }
 
-    public function renderView(int $id)
+    public function renderView(int $id): void
     {
         $post = $this->postRepository->findById($id);
 
@@ -43,14 +43,14 @@ class PostPresenter extends BasePresenter
         $this->template->dislikes = count(array_filter($ratings, fn(Rating $rating) => $rating->getKind() === Rating::KIND_DISLIKE));
     }
 
-    public function handleLike(int $id)
+    public function handleLike(int $id): void
     {
         $this->ratingRepository->ratePost($id, $this->getUser()->getId(), Rating::KIND_LIKE);
 
         $this->redirect(":view", ["id" => $id]);
     }
 
-    public function handleDislike(int $id)
+    public function handleDislike(int $id): void
     {
         $this->ratingRepository->ratePost($id, $this->getUser()->getId(), Rating::KIND_DISLIKE);
 

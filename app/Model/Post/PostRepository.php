@@ -41,7 +41,7 @@ class PostRepository
     /**
      * Find first post by matching conditions.
      *
-     * @param array $conditions
+     * @param array<string, mixed> $conditions
      * @return Post|null
      */
     public function findOne(array $conditions = []): ?Post {
@@ -53,9 +53,9 @@ class PostRepository
     /**
      * Find multiple posts.
      *
-     * @param array $conditions
+     * @param array<string, mixed> $conditions
      * @param string $order
-     * @return array
+     * @return Post[]
      */
     public function findMany(array $conditions = [], string $order = ""): array
     {
@@ -73,11 +73,12 @@ class PostRepository
     /**
      * Create a new post.
      *
-     * @param array $data
+     * @param array<string, mixed> $data
      * @return Post
      */
     public function create(array $data): Post
     {
+        /** @var ActiveRow $row */
         $row = $this->getDatabase()->insert([
             Post::TITLE_FIELD => $data["title"],
             Post::PEREX_FIELD => $data["perex"],
