@@ -9,24 +9,24 @@ use Nette\Application\UI\Form;
 class LoginFormFactory
 {
 
-    public function create(): Form
-    {
-        $form = new BootstrapForm();
+  public function create(): Form
+  {
+    $form = new BootstrapForm();
 
-        $form->setAjax();
+    $form->setAjax();
 
-        $form->renderMode = RenderMode::SIDE_BY_SIDE_MODE;
+    $form->renderMode = RenderMode::SIDE_BY_SIDE_MODE;
 
-        $form->addText('username', 'Uživatelské jméno')
-            ->setMaxLength(32)
-            ->setRequired();
+    $form->addText('username', 'Uživatelské jméno')
+      ->setMaxLength(32)
+      ->setRequired();
 
-        $form->addPassword('password', 'Heslo')
-            ->setRequired();
+    $form->addPassword('password', 'Heslo')
+      ->setRequired();
 
-        $form->addSubmit('submit', 'Přihlásit se');
+    $form->addSubmit('submit', 'Přihlásit se');
 
-        return $form;
-    }
+    return $form;
+  }
 
 }

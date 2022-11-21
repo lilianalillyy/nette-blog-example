@@ -7,12 +7,12 @@ use Nette\Application\UI\Presenter;
 class BasePresenter extends Presenter
 {
 
-    protected function startup()
-    {
-        $this->redrawControl("title");
-        $this->redrawControl("content");
+  protected function startup()
+  {
+    $this->redrawControl("title");
+    $this->redrawControl("content");
 
-        parent::startup();
-    }
+    parent::startup();
+  }
 
 }

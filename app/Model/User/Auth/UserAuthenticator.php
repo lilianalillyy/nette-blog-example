@@ -13,41 +13,42 @@ use Nette\Security\SimpleIdentity;
 class UserAuthenticator implements Authenticator, IdentityHandler
 {
 
-    public function __construct(
-        private readonly UserRepository $userRepository,
-        private readonly Passwords $passwords
-    )
-    {
+  public function __construct(
+    private readonly UserRepository $userRepository,
+    private readonly Passwords $passwords
+  )
+  {
+  }
+
+  public function authenticate(string $user, string $password): SimpleIdentity
+  {
+    $entity = $this->userRepository->findOne(["username" => $user]);
+
+    if (!$entity || !$this->passwords->verify($password, $entity->getPasswordHash())) {
+      throw new AuthenticationException("Uživatelské jméno nebo heslo je nesprávné.");
     }
 
-    public function authenticate(string $user, string $password): SimpleIdentity {
-        $entity = $this->userRepository->findOne([ "username" => $user ]);
+    return new SimpleIdentity($entity->getId(), null, $entity->toArray());
+  }
 
-        if (!$entity || !$this->passwords->verify($password, $entity->getPasswordHash())) {
-            throw new AuthenticationException("Uživatelské jméno nebo heslo je nesprávné.");
-        }
+  public function sleepIdentity(IIdentity $identity): IIdentity
+  {
+    return $identity;
+  }
 
-        return new SimpleIdentity($entity->getId(), null, $entity->toArray());
+  /**
+   * @param SimpleIdentity $identity
+   * @return IIdentity|null
+   */
+  public function wakeupIdentity(IIdentity $identity): ?IIdentity
+  {
+    $user = $this->userRepository->findById($identity->getId());
+
+    if (!$user) {
+      return null;
     }
 
-    public function sleepIdentity(IIdentity $identity): IIdentity
-    {
-        return $identity;
-    }
-
-    /**
-     * @param SimpleIdentity $identity
-     * @return IIdentity|null
-     */
-    public function wakeupIdentity(IIdentity $identity): ?IIdentity
-    {
-        $user = $this->userRepository->findById($identity->getId());
-
-        if (!$user) {
-            return null;
-        }
-
-        return new SimpleIdentity($user->getId(), null, $user->toArray());
-    }
+    return new SimpleIdentity($user->getId(), null, $user->toArray());
+  }
 
 }

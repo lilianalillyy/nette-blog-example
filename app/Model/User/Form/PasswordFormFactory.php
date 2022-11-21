@@ -9,23 +9,23 @@ use Nette\Application\UI\Form;
 class PasswordFormFactory
 {
 
-    public function create(): Form
-    {
-        $form = new BootstrapForm();
+  public function create(): Form
+  {
+    $form = new BootstrapForm();
 
-        $form->setAjax();
+    $form->setAjax();
 
-        $form->renderMode = RenderMode::SIDE_BY_SIDE_MODE;
+    $form->renderMode = RenderMode::SIDE_BY_SIDE_MODE;
 
-        $form->addPassword('oldPassword', 'Staré heslo')->setRequired();
+    $form->addPassword('oldPassword', 'Staré heslo')->setRequired();
 
-        $form->addPassword('newPassword', 'Nové heslo')->setRequired();
+    $form->addPassword('newPassword', 'Nové heslo')->setRequired();
 
-        $form->addPassword('newPasswordRepeat', 'Nové heslo znovu')->setRequired();
+    $form->addPassword('newPasswordRepeat', 'Nové heslo znovu')->setRequired();
 
-        $form->addSubmit('submit', "Změnit heslo");
+    $form->addSubmit('submit', "Změnit heslo");
 
-        return $form;
-    }
+    return $form;
+  }
 
 }
