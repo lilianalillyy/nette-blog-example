@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa36af83-5e72-42bb-ad5a-fee6cfb6f03d" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/thanks" />
+      <path value="$PROJECT_DIR$/vendor/nette/database" />
+      <path value="$PROJECT_DIR$/vendor/nette/forms" />
+      <path value="$PROJECT_DIR$/vendor/nette/neon" />
+      <path value="$PROJECT_DIR$/vendor/latte/latte" />
+      <path value="$PROJECT_DIR$/vendor/nette/di" />
+      <path value="$PROJECT_DIR$/vendor/nette/mail" />
+      <path value="$PROJECT_DIR$/vendor/nette/finder" />
+      <path value="$PROJECT_DIR$/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/vendor/nette/caching" />
+      <path value="$PROJECT_DIR$/vendor/nette/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/tracy/tracy" />
+      <path value="$PROJECT_DIR$/vendor/nette/component-model" />
+      <path value="$PROJECT_DIR$/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/vendor/nette/tester" />
+      <path value="$PROJECT_DIR$/vendor/nette/php-generator" />
+      <path value="$PROJECT_DIR$/vendor/nette/security" />
+      <path value="$PROJECT_DIR$/vendor/nette/routing" />
+      <path value="$PROJECT_DIR$/vendor/nette/robot-loader" />
+      <path value="$PROJECT_DIR$/vendor/nette/http" />
+      <path value="$PROJECT_DIR$/vendor/nette/application" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/contributte/forms-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/contributte/neonizer" />
+      <path value="$PROJECT_DIR$/vendor/contributte/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-strict-rules" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-deprecation-rules" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-doctrine" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan-nette" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2HjMRCU3DaFzttNMZrdrM67Klgh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/someo/ulozto-trial/config&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.HTML&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\someo\ulozto-trial\config" />
+      <recent name="C:\Users\someo\ulozto-trial\app\Presenters\templates\Auth" />
+      <recent name="C:\Users\someo\ulozto-trial\app\Model\Auth\Form" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\someo\ulozto-trial\bin" />
+      <recent name="C:\Users\someo\ulozto-trial\app\Model\Comment" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa36af83-5e72-42bb-ad5a-fee6cfb6f03d" name="Changes" comment="" />
+      <created>1668794028316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668794028316</updated>
+      <workItem from="1668794029749" duration="22641000" />
+      <workItem from="1668906997017" duration="24826000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
